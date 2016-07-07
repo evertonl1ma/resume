@@ -1,0 +1,99 @@
+#start, #time, #reset, #hint {
+	display: none;
+}
+
+section[id^=slide] {
+	border-bottom: 1px solid black;
+}
+
+h2:before {
+	content: counter(slide) " ";
+}
+
+
+
+:target li {
+	animation: item 1.5s 1s;
+	-o-animation: item 1.5s 1s;
+	-ms-animation: item 1.5s 1s;
+	-moz-animation: item 1.5s 1s;
+	-webkit-animation: item 1.5s 1s;
+
+	animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+:target li:nth-child(2) { 
+	animation-delay: 2.5s;
+	-o-animation-delay: 2.5s;
+	-ms-animation-delay: 2.5s;
+	-moz-animation-delay: 2.5s;
+	-webkit-animation-delay: 2.5s;
+}
+
+:target li:nth-child(3) { 
+	animation-delay: 4s;
+	-o-animation-delay: 4s;
+	-ms-animation-delay: 4s;
+	-moz-animation-delay: 4s;
+	-webkit-animation-delay: 4s;
+}
+
+:target li:nth-child(4) { 
+	animation-delay: 5.5s;
+	-o-animation-delay: 5.5s;
+	-ms-animation-delay: 5.5s;
+	-moz-animation-delay: 5.5s;
+	-webkit-animation-delay: 5.5s;
+}
+
+#slide5 p {
+	margin-top: 3em;
+	text-align: center;
+}
+
+a.prev, a.next {
+	font-family: hands;
+	font-size: 24vh;
+	position: absolute;
+	top: 60%;
+	line-height: 100%;
+	text-shadow: 0 0 0.1em #000;
+	margin: 0;
+}
+
+a.prev {
+	left: 3%;
+}
+
+a.next {
+	right: 3%;
+}
+
+a.prev:after {
+	content: "☜";
+}
+
+a.next:after {
+	content: "☞";
+}
+
+section:target #hint {
+	background-color: #f55;
+	color: #fff;
+	text-shadow: 0 0.03em 0.03em #000;
+	border-radius: 0.3em;
+	padding: 0.1em 0.2em;
+	position: absolute;
+	right: 0;
+	bottom: 0.5em;
+	opacity: 0;
+	animation: hint 5s linear 6s infinite;
+	-o-animation: hint 5s linear 6s infinite;
+	-ms-animation: hint 5s linear 6s infinite;
+	-moz-animation: hint 5s linear 6s infinite;
+	-webkit-animation: hint 5s linear 6s infinite;
+}

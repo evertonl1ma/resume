@@ -1,0 +1,288 @@
+/*
+@import url(background.css);
+@import url(animations.css);
+@import url(media.css);
+*/
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	overflow: hidden;
+	color: #F0D800;
+	text-shadow: 0 0.03em 0.05em #000;
+	font-size: 5vh;
+	background: #446CB3;
+}
+
+h1 {
+	display: none;
+}
+
+a {
+	color: rgba(255, 255, 200, 0.9);
+	text-decoration: none;
+	display: inline-block;
+	transition: all 300ms;
+	-o-transition: all 300ms;
+	-ms-transition: all 300ms;
+	-moz-transition: all 300ms;
+	-webkit-transition: all 300ms;
+}
+
+a:hover {
+	-transform: scale(1.2);
+	-o-transform: scale(1.2);
+	-ms-transform: scale(1.2);
+	-moz-transform: scale(1.2);
+	-webkit-transform: scale(1.2);
+}
+
+#start {
+	position: relative;
+	top: 30%;
+	background-color: rgba(0, 0, 0, 0.6);
+	padding: 1em 0;
+}
+
+#start a {
+	display: block;
+	width: 8em;
+	margin: auto;
+	text-align: center;
+	font-size: 6vh;
+}
+
+section[id^=slide]:target ~ #start {
+	display: none;
+}
+
+#time {
+	position: fixed;
+	right: 0px;
+	bottom: 0px;
+	height: 26px;
+	line-height: 26px;
+	opacity: 0;
+	border-radius: 13px 0 0 13px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	text-shadow: none;
+	font-size: 3vh;
+	color: #fff;
+}
+
+#time::before {
+	content: "â† Time remaining in this talk";
+	text-transform: uppercase;
+	margin-left: 0.5em;
+}
+
+#reset {
+	margin-left: 1em;
+	font-size: 3vh;
+}
+
+:target ~ #time {
+	opacity: 1;
+
+	animation: time 120s linear;
+	-o-animation: time 120s linear;
+	-ms-animation: time 120s linear;
+	-moz-animation: time 120s linear;
+	-webkit-animation: time 120s linear;
+
+	animation-fill-mode: forwards;
+	-o-animation-fill-mode: forwards;
+	-ms-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+}
+
+#slide1:target ~ #time {
+	opacity: 0;
+}
+
+[id^=slide] {
+	box-sizing: border-box;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	padding: 5%;
+	z-index: 0;
+	transition: all 1s;
+	-o-transition: all 1s;
+	-ms-transition: all 1s;
+	-moz-transition: all 1s;
+	-webkit-transition: all 1s;
+	
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+[id^=slide] > * {
+	position: relative;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+[id^=slide]::before {
+	content: "";
+	position: absolute;
+	left: 5%;
+	right: 5%;
+	top: 10%;
+	bottom: 10%;
+	background: #FFF;
+	border-radius: 30px;
+}
+
+[id^=slide]:target {
+	z-index: 1;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+}
+
+[id^=slide]:target ~ [id^=slide] {
+	-webkit-transform: rotate(-90deg);
+	transform: rotate(-90deg);
+}
+
+[id^=slide] h2 {
+	text-align: center;
+	font-size: 8vh;
+	margin: 0.5em;
+	white-space: nowrap;
+}
+
+[id^=slide] h2::after {
+	position: absolute;
+	right: 20px;
+	top: -10px;
+	font-size: 16vh;
+	opacity: 0.3;
+	content: counter(slide);
+}
+
+[id^=slide] ul {
+	margin-left: 2em;
+}
+
+ul.achievements > li {
+	list-style-type: none;
+}
+
+ul.achievements > li:before {
+	list-style-type: none;
+	content: "âś” ";
+	color: #0c0;
+}
+
+li {
+	line-height: 1.5;
+	
+	float: left;
+	clear: left;
+}
+
+li:last-child {
+	margin-bottom: 0.5em;
+}
+
+
+#slide5 p {
+	margin-top: 3em;
+	text-align: center;
+}
+
+a.prev, a.next {
+	font-family: hands;
+	font-size: 24vh;
+	position: absolute;
+	top: 60%;
+	line-height: 100%;
+	text-shadow: 0 0 0.1em #000;
+	margin: 0;
+}
+
+a.prev {
+	left: 3%;
+}
+
+a.next {
+	right: 3%;
+}
+
+a.prev:after {
+	content: "<";
+}
+
+a.next:after {
+	content: ">";
+}
+
+.eu {
+	transform: scale(1);
+}
+
+.everton {
+	
+}
+
+:target p {
+	transition: .5s;
+	-webkit-animation: entra 2s ease-in-out;
+	animation: entra 2s ease-in-out;
+}
+
+:target .eu {
+	transition: 0.5s;
+	-webkit-animation: movedown 2s ease-in-out;
+	animation: movedown 2s ease-in-out;
+}
+
+@-webkit-keyframes movedown {
+    0% {
+    	transform: scale(0);
+    } 
+    100% {
+    	transform: scale(1);
+    }
+}
+
+@keyframes movedown {
+    0% {
+    	transform: scale(0);
+    } 
+    } 
+    100% {
+    	transform: scale(1);
+    }
+}
+
+@-webkit-keyframes entra {
+	0% {
+		transform: translate(-500px, 0);
+		opacity: 0;
+	} 100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes entra {
+	0% {
+		transform: translate(-500px, 0);
+		opacity: 0;
+	} 100% {
+		transform: none;
+		opacity: 1;
+	}
+}
+
