@@ -1,9 +1,3 @@
-/*
-@import url(background.css);
-@import url(animations.css);
-@import url(media.css);
-*/
-
 html, body {
 	height: 100%;
 }
@@ -11,9 +5,9 @@ html, body {
 body {
 	margin: 0;
 	overflow: hidden;
-	color: #F0D800;
-	text-shadow: 0 0.03em 0.05em #000;
-	font-size: 5vh;
+	color: #34495e;
+	font-size: 4.5vh;
+	font-family: 'Roboto', sans-serif;
 	background: #446CB3;
 }
 
@@ -22,7 +16,7 @@ h1 {
 }
 
 a {
-	color: rgba(255, 255, 200, 0.9);
+	color: #e74c3c;
 	text-decoration: none;
 	display: inline-block;
 	transition: all 300ms;
@@ -53,32 +47,11 @@ a:hover {
 	margin: auto;
 	text-align: center;
 	font-size: 6vh;
+	color: rgba(255, 255, 200, 0.9);
 }
 
 section[id^=slide]:target ~ #start {
 	display: none;
-}
-
-#time {
-	position: fixed;
-	right: 0px;
-	bottom: 0px;
-	height: 26px;
-	line-height: 26px;
-	opacity: 0;
-	border-radius: 13px 0 0 13px;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	overflow: hidden;
-	text-shadow: none;
-	font-size: 3vh;
-	color: #fff;
-}
-
-#time::before {
-	content: "â† Time remaining in this talk";
-	text-transform: uppercase;
-	margin-left: 0.5em;
 }
 
 #reset {
@@ -86,32 +59,13 @@ section[id^=slide]:target ~ #start {
 	font-size: 3vh;
 }
 
-:target ~ #time {
-	opacity: 1;
-
-	animation: time 120s linear;
-	-o-animation: time 120s linear;
-	-ms-animation: time 120s linear;
-	-moz-animation: time 120s linear;
-	-webkit-animation: time 120s linear;
-
-	animation-fill-mode: forwards;
-	-o-animation-fill-mode: forwards;
-	-ms-animation-fill-mode: forwards;
-	-moz-animation-fill-mode: forwards;
-	-webkit-animation-fill-mode: forwards;
-}
-
-#slide1:target ~ #time {
-	opacity: 0;
-}
 
 [id^=slide] {
 	box-sizing: border-box;
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	padding: 5%;
+	padding: 8%;
 	z-index: 0;
 	transition: all 1s;
 	-o-transition: all 1s;
@@ -159,16 +113,9 @@ section[id^=slide]:target ~ #start {
 	font-size: 8vh;
 	margin: 0.5em;
 	white-space: nowrap;
+	color: #e74c3c;
 }
 
-[id^=slide] h2::after {
-	position: absolute;
-	right: 20px;
-	top: -10px;
-	font-size: 16vh;
-	opacity: 0.3;
-	content: counter(slide);
-}
 
 [id^=slide] ul {
 	margin-left: 2em;
@@ -186,7 +133,6 @@ ul.achievements > li:before {
 
 li {
 	line-height: 1.5;
-	
 	float: left;
 	clear: left;
 }
@@ -196,7 +142,7 @@ li:last-child {
 }
 
 
-#slide5 p {
+#slide10 p {
 	margin-top: 3em;
 	text-align: center;
 }
@@ -207,6 +153,7 @@ a.prev, a.next {
 	position: absolute;
 	top: 60%;
 	line-height: 100%;
+	color: rgba(255, 255, 200, 0.9);
 	text-shadow: 0 0 0.1em #000;
 	margin: 0;
 }
@@ -227,21 +174,19 @@ a.next:after {
 	content: ">";
 }
 
-.eu {
+p {
 	transform: scale(1);
 }
 
-.everton {
-	
-}
 
-:target p {
+:target ul li {
 	transition: .5s;
 	-webkit-animation: entra 2s ease-in-out;
 	animation: entra 2s ease-in-out;
 }
 
-:target .eu {
+
+:target p {
 	transition: 0.5s;
 	-webkit-animation: movedown 2s ease-in-out;
 	animation: movedown 2s ease-in-out;
